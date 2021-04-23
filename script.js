@@ -91,26 +91,23 @@ function formSubmitToCreateBookmark(e) {
     }
     bookmarksArray.push(object);
     object.id = bookmarksArray.indexOf(object);
-    console.log(object.id);
-    console.log(object);
     //Add Values to Local Storage
     localStorage.setItem("bookmarks", JSON.stringify(bookmarksArray));
     //
     hideAddForm();
     createBookmark(object.id, object.url, object.nickname);
+    console.log(bookmarksArray);
 }
 
 //Remove Bookmark
 function removeBookmark(e) {
     //Remove bookmark from DOM
     e.srcElement.parentElement.parentElement.parentElement.remove();
-    let i = e.srcElement.id;
-    console.log(i);
-    console.log('before filter', bookmarksArray);
+    let i = Number(e.srcElement.id);
     //Remove obj from local storage
     bookmarksArray = bookmarksArray.filter(obj => {return obj.id !== i});
-    console.log('after filter', bookmarksArray);
     localStorage.setItem("bookmarks", JSON.stringify(bookmarksArray));
+    console.log(bookmarksArray);
 }
 // Event Listeners
 
@@ -127,6 +124,9 @@ function addEventListenersToRemoveBtns() {
 //ON LOAD
 addEventListenersToRemoveBtns();
 let bookmarksArray = [];
+
+
+//Check local storage to retrieve if values
 if (localStorage.getItem("bookmarks")) {
     bookmarksArray = JSON.parse(localStorage.getItem("bookmarks"));
     bookmarksArray.forEach((obj) => {
@@ -135,4 +135,3 @@ if (localStorage.getItem("bookmarks")) {
         createBookmark(id, url, nickname);
     });
 }
-
