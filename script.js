@@ -96,7 +96,6 @@ function formSubmitToCreateBookmark(e) {
     //
     hideAddForm();
     createBookmark(object.id, object.url, object.nickname);
-    console.log(bookmarksArray);
 }
 
 //Remove Bookmark
