@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Bookmarks App</title>
+    <link rel="icon" href="/img/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Antonio&family=Asap:wght@400;700&family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <div class="nav-section">
+        <nav class="nav" id="nav">
+            <div class="nav-wrapper">
+                <ul class="nav-list" id="nav-list">
+                    <li class="nav-item" id="nav-1"><a href="" id="nav-1">Home</a></li>
+                    <li class="nav-item" id="nav-2"><a href="" id="nav-2">About</a></li>
+                    <li class="nav-item" id="nav-3"><a href="" id="nav-3">Contact</a></li>
+                </ul>
+            </div>
+            <div class="title-wrapper">
+                <h1 class="title">Bookkeeper App</h1>
+            </div>
+        </nav>
+    </div>
+    <div class="bookmarks__section" id="bookmarks-section">
+        <!-- Bookmark Divs -->
+        <div class="bookmark">
+            <img src="img/favicon-32x32.png" class="favicon"></img>
+            <a href="#" class="bookmark-link"> Bookkeeper App</a>
+            <div class="remove-icon remove-wrapper" id="remove-wrapper"><button class="remove-bookmark" id="remove-bookmark"><i class="far fa-times-circle remove" title="Remove Bookmark" id="remove"></i></button></div>
+        </div>
+        <div class="bookmark perm-bookmark" id="permBookmark"><button class="add-bookmark" id="add-bookmark"><i class="fas fa-plus" title="Add a Bookmark"></i></button></div>
+    </div>
+    <!-- Add Bookmark Form and overlay -->
+    <div class="pop-up-wrapper" id="pop-up-wrapper" hidden>
+        <div class="overlay" id="overlay" >
+        </div>
+        <form id="add-bookmark-form">
+            <div class="remove-icon close-wrapper" id="close-wrapper">
+                <button type="button" class="close-form" id="close-form">
+                    <i class="far fa-times-circle close" title="Close Form" id="closeFormBtn">
+                    </i>
+                </button>
+            </div>
+            <div class="input-wrapper" id="input-wrapper">
+                <label for="url" >URL:</label>
+                <input type="url" id="url" name="url" placeholder="Please enter URL" required><br><br>
+                <label for="bookmark-name">Bookmark Nickname:</label>
+                <input type="text" id="bookmark-name" name="bookmark-name" placeholder="Please enter nickname"><br><br>
+                <button class="btn" type="submit" id="add-bookmark-btn">Add Bookmark</button>
+            </div>
+        </form>
+    </div>
+    <!-- Script -->
+    <script src="script-copy.js"></script>
+
+</body>
+</html>
